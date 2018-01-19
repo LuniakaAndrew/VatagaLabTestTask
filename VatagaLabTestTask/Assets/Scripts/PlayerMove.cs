@@ -20,7 +20,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-
+        //Ray for get Objects
         Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f); // center of the screen
         float rayLength = 2f;
 
@@ -41,6 +41,7 @@ public class PlayerMove : MonoBehaviour
                     fireGrenade = hit.collider.gameObject;
             }
         }
+
         //Take fire grenade
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -58,6 +59,7 @@ public class PlayerMove : MonoBehaviour
             }
 
         }
+        //in order to avoid taking a fire extinguisher if we just looked at him
         take = false;
 
         if (inHands)
@@ -95,7 +97,13 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
         }
+        //Exit Program
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 
+        //Character Move
         CharacterController controller = GetComponent<CharacterController>();
         if (controller.isGrounded)
         {

@@ -40,7 +40,7 @@ public class FireGrenade : MonoBehaviour
 
         if (isRandomGood)
         {
-            Random.InitState(System.DateTime.Now.Millisecond%3);
+            Random.InitState(System.DateTime.Now.Millisecond % 3);
             int value = Random.Range(0, 100);
             if (value % 2 == 0)
             {
